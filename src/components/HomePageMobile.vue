@@ -29,13 +29,12 @@
 
   <section id="courses" style="width: 275px; padding-top: 40px;">
     <h2>Courses Offered</h2>
-    <p style="text-align:center;">
-      📘 JEE MAINS & ADVANCED<br>
-        📗 INTERMEDIATE<br>
+    <p style="text-align:center;"><br>
+      📘JEE MAINS & ADVANCED<br>
+         📗 INTERMEDIATE<br>
       📘CBSE/State IPE / ICSE<br>
-        📗 EAPCET / NEET <br>
-      <span  style="color:rgb(248, 12, 12);padding-right: 80px;padding-left: 0px;">6,7,8,9 &10 IIT Foundation</span>
-            
+         📗 EAPCET / NEET <br>
+<span style="color:rgb(248, 12, 12);padding-right: 10px;padding-left: 5px;" data-v-fab63700="">6,7,8,9 &amp;10 IIT Foundation</span><br>            
          📘 MATHS<br>
         📗 PHYSICS<br>
        📘CHEMISTRY<br>
@@ -50,6 +49,18 @@
        3rd Floor,Plot No:58 MP,Above Medplus Medical Hall,<br>
          Santhoshi Matha Temple Line,Hasthinapuram North,<br>
     Karmanghat,HYD-70.<br>
+    <div class="map-button-container">
+    <p style="margin:10px 0;font-size: 0.8rem;">Find Us on Google Maps
+      <!-- Google Maps Pin Icon -->
+    <img
+      src="/images/gMapIcon.png" 
+      alt="Google Maps Pin"
+      class="map-pin"
+      style="width: 25px;"
+      @click="openGoogleMaps"
+    />
+    </p>
+  </div>
       <p>📧 Email: <a href="mailto:mathguru.solutions@gmail.com" style="color:#ffdd57;">mathguru.solutions@gmail.com</a></p>
       <p>📞 : <button onclick="window.location.href='tel:+919440586101'"> 9440586101 </button>
         <button onclick="window.location.href='tel:+919032642682'"> 9032642682</button>
@@ -71,8 +82,18 @@
 <script>
 export default {
   name: 'HomePageMobile',
+   components: {
+   // MathGuruGoogleMap
+  },
   props: {
     msg: String
+  },
+    methods: {
+    openGoogleMaps() {
+      // Replace the link with your location's Google Maps link
+      const mapsUrl = "https://maps.app.goo.gl/9iy6SyXXidnMScHJA";
+      window.open(mapsUrl, "_blank"); // Opens in a new tab
+    }
   }
 }
 </script>
@@ -175,5 +196,37 @@ a {
     font-weight: bold;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
+.map-button-container {
+  text-align: center;
+  margin: 20px 0;
+}
 
+.map-button-container button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #1d5266;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.map-button-container button:hover {
+  background-color: #42b00b;
+}
+.map-pin-container {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.map-pin {
+  width: 50px;           /* adjust size */
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.map-pin:hover {
+  transform: scale(1.2); /* simple hover effect */
+}
 </style>

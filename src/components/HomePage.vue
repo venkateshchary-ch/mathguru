@@ -36,14 +36,14 @@
   <section id="courses">
     <h2>Courses Offered</h2>
     <p style="text-align:center;">
-      📘 JEE MAINS & ADVANCED<br>
-      📗 INTERMEDIATE<br>
+     📘 JEE MAINS & ADVANCED<br>
+        📗 INTERMEDIATE<br>
      📘CBSE/State IPE / ICSE<br>
-       📗 EAPCET / NEET <br>
-      <strong  style="color: rgb(248, 12, 12); font-size: 20px;">6,7,8,9 &10 IIT Foundation</strong>
-       📘 MATHS<br>
-      📗 PHYSICS<br>
-     📘CHEMISTRY</p>
+        📗 EAPCET / NEET <br>
+      <span style="text-align: center;color: rgb(248, 12, 12);font-size: 20px;padding-right: 180px;padding-left: 200px;">6,7,8,9 &10 IIT Foundation </span><br>
+           📘 MATHS<br>
+         📗 PHYSICS<br>
+       📘CHEMISTRY</p>
   </section>
 
   <section id="contact">
@@ -54,6 +54,18 @@
        3rd Floor,Plot No:58 MP,Above Medplus Medical Hall,<br>
          Santhoshi Matha Temple Line,Hasthinapuram North,<br>
     Karmanghat,HYD-70.<br>
+   <div class="map-button-container">
+    <p style="margin:10px 0;font-size: 0.8rem;">Find Us on Google Maps
+      <!-- Google Maps Pin Icon -->
+    <img
+      src="/images/gMapIcon.png" 
+      alt="Google Maps Pin"
+      class="map-pin"
+      style="width: 35px;"
+      @click="openGoogleMaps"
+    />
+    </p>
+  </div>
       <p>📧 Email: <a href="mailto:mathguru.solutions@gmail.com" style="color:#ffdd57;">mathguru.solutions@gmail.com</a></p>
       <p>📞 : <button onclick="window.location.href='tel:+919440586101'"> 9440586101 </button>
         <button onclick="window.location.href='tel:+919032642682'"> 9032642682</button>
@@ -67,10 +79,6 @@
     <!-- WhatsApp Support Button -->
   <a href="https://wa.me/9440586101" class="whatsapp-button" target="_blank">💬 Chat on WhatsApp</a>
 
-  <footer>
-    <p>&copy; Math Guru. All Rights Reserved.</p>
-  </footer>
-
     <!-- <h1>{{ msg }}</h1> -->
   </div>
 </template>
@@ -80,6 +88,13 @@ export default {
   name: 'HomePage',
   props: {
     msg: String
+  },
+    methods: {
+    openGoogleMaps() {
+      // Replace the link with your location's Google Maps link
+      const mapsUrl = "https://maps.app.goo.gl/9iy6SyXXidnMScHJA";
+      window.open(mapsUrl, "_blank"); // Opens in a new tab
+    }
   }
 }
 </script>
@@ -158,5 +173,38 @@ a {
     text-decoration: none;
     font-weight: bold;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+.map-button-container {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.map-button-container button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #1d5266;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.map-button-container button:hover {
+  background-color: #144051;
+}
+.map-pin-container {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.map-pin {
+  width: 50px;           /* adjust size */
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.map-pin:hover {
+  transform: scale(1.2); /* simple hover effect */
 }
 </style>
